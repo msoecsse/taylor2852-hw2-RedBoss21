@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Tests",
+      "setup": "wget --no-verbose https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.0/checkstyle-10.0-all.jar; wget --no-verbose https://faculty-web.msoe.edu/jones/MSOE_checkStyle.xml; java -jar checkstyle-10.0-all.jar -c MSOE_checkStyle.xml -e src/test/*.java src/**/*.java; wget --no-verbose https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.8.2/junit-platform-console-standalone-1.8.2.jar; javac -d target -cp target:junit-platform-console-standalone-1.8.2.jar src/**/*.java;",
+      "run": "java -jar junit-platform-console-standalone-1.8.2.jar --class-path target --select-class test.SimpleListTest",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
